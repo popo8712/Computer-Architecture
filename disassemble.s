@@ -5,47 +5,38 @@
     c:        00000073        ecall
     10:        10000517        auipc x10 0x10000
     14:        01c50513        addi x10 x10 28
-    18:        00000593        addi x11 x0 0
-
-0000001c <loop1>:
-    1c:        00052283        lw x5 0 x10
-    20:        0002ca63        blt x5 x0 20 <end1>
-    24:        00159593        slli x11 x11 1
-    28:        0055e5b3        or x11 x11 x5
-    2c:        00450513        addi x10 x10 4
-    30:        fedff06f        jal x0 -20 <loop1>
-
-00000034 <end1>:
-    34:        00058513        addi x10 x11 0
-    38:        00100893        addi x17 x0 1
-    3c:        00000073        ecall
-    40:        10000517        auipc x10 0x10000
-    44:        fd550513        addi x10 x10 -43
-    48:        00400893        addi x17 x0 4
-    4c:        00000073        ecall
-    50:        10000517        auipc x10 0x10000
-    54:        fc750513        addi x10 x10 -57
-    58:        00400893        addi x17 x0 4
+    18:        048000ef        jal x1 72 <process_list>
+    1c:        10000517        auipc x10 0x10000
+    20:        ff950513        addi x10 x10 -7
+    24:        00400893        addi x17 x0 4
+    28:        00000073        ecall
+    2c:        10000517        auipc x10 0x10000
+    30:        feb50513        addi x10 x10 -21
+    34:        00400893        addi x17 x0 4
+    38:        00000073        ecall
+    3c:        10000517        auipc x10 0x10000
+    40:        00050513        addi x10 x10 0
+    44:        01c000ef        jal x1 28 <process_list>
+    48:        10000517        auipc x10 0x10000
+    4c:        fcd50513        addi x10 x10 -51
+    50:        00400893        addi x17 x0 4
+    54:        00000073        ecall
+    58:        00a00893        addi x17 x0 10
     5c:        00000073        ecall
-    60:        10000517        auipc x10 0x10000
-    64:        fdc50513        addi x10 x10 -36
-    68:        00000593        addi x11 x0 0
 
-0000006c <loop2>:
-    6c:        00052283        lw x5 0 x10
-    70:        0002ca63        blt x5 x0 20 <end2>
-    74:        00159593        slli x11 x11 1
-    78:        0055e5b3        or x11 x11 x5
-    7c:        00450513        addi x10 x10 4
-    80:        fedff06f        jal x0 -20 <loop2>
+00000060 <process_list>:
+    60:        00000593        addi x11 x0 0
 
-00000084 <end2>:
-    84:        00058513        addi x10 x11 0
-    88:        00100893        addi x17 x0 1
-    8c:        00000073        ecall
-    90:        10000517        auipc x10 0x10000
-    94:        f8550513        addi x10 x10 -123
-    98:        00400893        addi x17 x0 4
-    9c:        00000073        ecall
-    a0:        00a00893        addi x17 x0 10
-    a4:        00000073        ecall
+00000064 <loop>:
+    64:        00052283        lw x5 0 x10
+    68:        0002ca63        blt x5 x0 20 <end>
+    6c:        00159593        slli x11 x11 1
+    70:        0055e5b3        or x11 x11 x5
+    74:        00450513        addi x10 x10 4
+    78:        fedff06f        jal x0 -20 <loop>
+
+0000007c <end>:
+    7c:        00058513        addi x10 x11 0
+    80:        00100893        addi x17 x0 1
+    84:        00000073        ecall
+    88:        00008067        jalr x0 x1 0
